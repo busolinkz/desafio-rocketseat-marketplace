@@ -1,0 +1,76 @@
+<h2 class="font-bold text-2xl leading-tight text-gray-900">Novo produto</h2>
+<h4 class="text-gray-400 text-sm leading-tight font-normal mt-2 mb-10">
+  Cadastre um produto para venda no marketplace.
+</h4>
+
+<div class="grid grid-cols-3 gap-6 items-start">
+  <div class="bg-[#F5EAEA] flex flex-col gap-4 items-center justify-center h-80 w-full rounded-3xl">
+    <img src="image-upload.svg" alt="" class="w-10" />
+    <p class="text-gray-500 font-normal leading-tight text-sm text-center">
+      Selecione a imagem <br />
+      do produto
+    </p>
+  </div>
+
+  <form class="col-span-2 bg-white p-8 rounded-3xl">
+    <h3 class="mb-8 text-gray-500 font-bold leading-tight text-lg">Dados do produto</h3>
+
+    <div class="flex gap-5">
+      <div class="flex flex-col gap-2 border-b border-gray-400 pb-3">
+        <label for="title" class="text-gray-600 text-xs leading-tight uppercase">Título</label>
+        <input
+          type="text"
+          name="title"
+          id="title"
+          placeholder="Nome do produto"
+          class="outline-0 w-full text-gray-400"
+        />
+      </div>
+
+      <div class="flex flex-col gap-2 border-b border-gray-400 pb-3">
+        <label for="value" class="text-gray-600 text-xs leading-tight uppercase">Valor</label>
+        <input
+          type="number"
+          name="value"
+          id="value"
+          placeholder="0,00"
+          class="outline-0 w-full text-gray-400"
+        />
+      </div>
+    </div>
+
+    <div class="flex flex-col gap-2 border-b border-gray-400 pb-3 my-5">
+      <label for="description" class="text-gray-600 text-xs leading-tight uppercase">
+        Descrição
+      </label>
+      <textarea
+        name="description"
+        id="description"
+        placeholder="Escreva detalhes sobre o produto, tamanho, características"
+        class="outline-0 w-full text-gray-400"
+      ></textarea>
+    </div>
+
+    <div class="flex flex-col gap-2 border-b border-gray-400 pb-3">
+      <label for="category" class="text-gray-600 text-xs leading-tight uppercase">Categoria</label>
+      <select placeholder="Selecione" class="outline-0 w-full text-gray-400">
+        <option>Opcao 1</option>
+        <option>Opcao 2</option>
+        <option>Opcao 3</option>
+      </select>
+    </div>
+
+    <div class="flex gap-3 mt-10">
+      <button
+        class="text-[#F24D0D] border border-[#F24D0D] w-full bg-white px-5 py-4 rounded-[10px] cursor-pointer text-center"
+      >
+        Cancelar
+      </button>
+      <button
+        class="bg-[#F24D0D] w-full text-white px-5 py-4 rounded-[10px] cursor-pointer text-center"
+      >
+        Salvar e publicar
+      </button>
+    </div>
+  </form>
+</div>
