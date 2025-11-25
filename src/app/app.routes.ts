@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { AuthGuard } from './guards/auth-guard';
 import { Horizontal } from './layouts/horizontal/horizontal';
 import { Login } from './pages/login/login';
 import { NewProduct } from './pages/new-product/new-product';
@@ -17,6 +18,7 @@ export const routes: Routes = [
   {
     path: "",
     component: Horizontal,
+    canActivateChild: [AuthGuard],
     children: [
       {
         path: "products",
