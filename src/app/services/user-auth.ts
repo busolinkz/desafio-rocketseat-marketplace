@@ -5,6 +5,10 @@ import { Injectable } from '@angular/core';
 })
 export class UserAuthService {
   getToken(): string | null {
-    return "TOKEN";
+    return localStorage.getItem('auth-token') || '';
+  }
+
+  setToken(token: string): void {
+    localStorage.setItem('auth-token', token);
   }
 }

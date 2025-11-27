@@ -17,7 +17,7 @@
       Informe seu e-mail e senha para entrar
     </h4>
 
-    <form action="" class="mt-12">
+    <form action="" class="mt-12" [formGroup]="loginForm">
       <div class="flex flex-col gap-2 border-b border-gray-400 pb-3">
         <label for="email" class="text-gray-600 text-xs leading-tight uppercase">E-mail</label>
 
@@ -29,11 +29,12 @@
             id="email"
             placeholder="Seu e-mail cadastrado"
             class="outline-0 w-full text-gray-400"
+            formControlName="email"
           />
         </div>
       </div>
 
-      <div class="flex flex-col gap-2 border-b border-gray-400 pb-3 mt-5 mb-12">
+      <div class="flex flex-col gap-2 border-b border-gray-400 pb-3 mt-5">
         <label for="password" class="text-gray-600 text-xs leading-tight uppercase">Senha</label>
 
         <div class="flex gap-2">
@@ -44,12 +45,19 @@
             id="password"
             placeholder="Seu e-mail cadastrado"
             class="outline-0 w-full text-gray-400"
+            formControlName="password"
           />
         </div>
       </div>
 
+      @if (loginErrorMessage) {
+      <span class="text-sm font-semibold text-red-500 mt-5 block">{{ loginErrorMessage }}</span>
+      }
+
       <button
-        class="bg-[#F24D0D] flex w-full items-center justify-between text-white px-5 py-4 rounded-[10px] cursor-pointer"
+        class="bg-[#F24D0D] flex mt-12 w-full items-center justify-between text-white px-5 py-4 rounded-[10px] enabled:cursor-pointer disabled:cursor-not-allowed disabled:opacity-50"
+        [disabled]="loginForm.invalid"
+        (click)="login()"
       >
         Acessar
         <img src="right-arrow.svg" alt="" />
