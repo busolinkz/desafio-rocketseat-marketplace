@@ -1,59 +1,77 @@
 # DesafioRocketseat
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.10.
+This application is a marketplace management panel built with Angular, inspired by the [Figma template](https://www.figma.com/community/file/1552330963598305030/gestao-de-marketplace-desafio-de-angular) from Rocketseat's Angular challenge.
 
-## Development server
+## Project Overview
 
-To start a local development server, run:
+- **Frontend:** Developed in Angular 20, following best practices for maintainable, performant, and accessible code.
+- **Design:** UI and UX are based on the official Figma template for the challenge.
+- **Backend:** To run the application, you need the backend available at [rocketseat-education/desafio-rocketseat-angular-template (backend-gestao-marketplace)](https://github.com/rocketseat-education/desafio-rocketseat-angular-template/tree/01-layout-completo/backend-gestao-marketplace).
 
-```bash
-ng serve
-```
+## Getting Started
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+### Prerequisites
 
-## Code scaffolding
+- Node.js (v18+ recommended)
+- Angular CLI (`npm install -g @angular/cli`)
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+### Installation
 
-```bash
-ng generate component component-name
-```
+1. **Clone this repository:**
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+   ```bash
+   git clone https://github.com/busolinkz/desafio-rocketseat-marketplace.git
+   cd desafio-rocketseat
+   ```
 
-```bash
-ng generate --help
-```
+2. **Install dependencies:**
 
-## Building
+   ```bash
+   npm install
+   ```
 
-To build the project run:
+3. **Start the backend:**
 
-```bash
-ng build
-```
+   - Follow instructions in the [backend repository](https://github.com/rocketseat-education/desafio-rocketseat-angular-template/tree/01-layout-completo/backend-gestao-marketplace) to run the API server.
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+4. **Run the frontend:**
+   ```bash
+   npm run start
+   ```
+   - Open [http://localhost:4200](http://localhost:4200) in your browser.
 
-## Running unit tests
+## Features
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+- User authentication and protected routes
+- Product listing, filtering, and creation
+- Responsive layout and modern UI
+- State management using Angular signals
+- Follows Angular and TypeScript best practices
 
-```bash
-ng test
-```
+## Development
 
-## Running end-to-end tests
+- **Code scaffolding:**  
+  Use Angular CLI to generate new components:
 
-For end-to-end (e2e) testing, run:
+  ```bash
+  ng generate component component-name
+  ```
 
-```bash
-ng e2e
-```
+- **Building:**  
+  Compile the project for production:
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+  ```bash
+  ng build
+  ```
 
-## Additional Resources
+- **Testing:**  
+  Run unit tests:
+  ```bash
+  ng test
+  ```
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## Resources
+
+- [Figma Template](https://www.figma.com/community/file/1552330963598305030/gestao-de-marketplace-desafio-de-angular)
+- [Backend Repository](https://github.com/rocketseat-education/desafio-rocketseat-angular-template/tree/01-layout-completo/backend-gestao-marketplace)
+- [Angular CLI Documentation](https://angular.dev/tools/cli)
