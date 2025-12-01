@@ -1,22 +1,24 @@
 <header class="flex justify-between px-5 items-center h-20 border-b border-[#F5EAEA]">
-  <img src="logo.svg" alt="" class="w-13" />
+  <img src="logo.svg" alt="" class="w-13" alt="Logotipo marketplace" />
 
-  <button
+  <a
     class="flex cursor-pointer gap-2 text-[#F24D0D] rounded-xl bg-[#F5EAEA] px-4 h-10 items-center font-medium"
     routerLink="/products"
+    aria-label="Acessar página de produtos"
   >
-    <img src="package.svg" alt="" />
+    <img src="package.svg" alt="" aria-hidden="true" />
     Produtos
-  </button>
+  </a>
 
   <div class="flex items-center gap-4">
-    <button
+    <a
       class="bg-[#F24D0D] flex gap-2 items-center justify-between text-white h-10 px-4 rounded-[10px] font-medium text-base cursor-pointer"
       routerLink="/new-product"
+      aria-label="Adicionar novo produto"
     >
-      <img src="plus-sign.svg" alt="" />
+      <img src="plus-sign.svg" alt="" aria-hidden="true" />
       Novo produto
-    </button>
-    <img src="user-avatar.svg" alt="" />
+    </a>
+    <img src="user-avatar.svg" alt="Avatar do usuário" />
   </div>
 </header>

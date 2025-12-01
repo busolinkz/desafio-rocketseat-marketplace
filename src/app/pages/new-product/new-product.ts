@@ -3,15 +3,17 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { ProductsService } from '../../services/products';
 import { NewProductRequest } from '../../interfaces/new-product-request';
 import { take } from 'rxjs';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-new-product',
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, RouterLink],
   templateUrl: './new-product.html',
   styleUrl: './new-product.css',
 })
 export class NewProduct {
   private readonly _productsService = inject(ProductsService);
+  private readonly _router = inject(Router);
 
   protected successMessage = '';
   protected productForm = new FormGroup({
@@ -20,7 +22,7 @@ export class NewProduct {
     description: new FormControl('', [Validators.required]),
     category: new FormControl('', [Validators.required]),
   });
-  private productImageBase64 = '';
+  protected productImageBase64 = '';
 
   onFileSelected(event: Event) {
     const input = event.target as HTMLInputElement;
@@ -64,6 +66,7 @@ export class NewProduct {
       .subscribe({
         next: (response) => {
           this.successMessage = response.message;
+          this._router.navigate(['/products']);
         },
         error: (error) => {},
       });

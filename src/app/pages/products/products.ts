@@ -1,8 +1,8 @@
-import { Component, inject } from '@angular/core';
-import { ProductsService } from '../../services/products';
 import { AsyncPipe } from '@angular/common';
+import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { BehaviorSubject, combineLatest, map } from 'rxjs';
+import { ProductsService } from '../../services/products';
 
 interface FilterOptions {
   title: string;

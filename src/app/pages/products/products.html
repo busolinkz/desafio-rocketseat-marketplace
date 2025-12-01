@@ -2,20 +2,20 @@
 
 <h2 class="font-bold text-2xl leading-tight text-gray-900">Seus produtos</h2>
 <h4 class="text-gray-400 text-sm leading-tight font-normal mt-2 mb-10">
-  Acesse gerencie a sua lista de produtos à venda
+  Acesse e gerencie a sua lista de produtos à venda
 </h4>
 
-<div class="grid grid-cols-3 gap-6 items-start">
+<main class="grid grid-cols-3 gap-6 items-start">
   <div class="bg-white p-6 rounded-[20px]">
     <h4 class="text-gray-600 text-lg leading-tight font-bold">Filtrar</h4>
 
-    <form action="" class="mt-6" [formGroup]="filterForm">
+    <form class="mt-6" [formGroup]="filterForm" (ngSubmit)="filterProducts()">
       <div class="flex flex-col gap-2 border-b border-gray-400 pb-3">
         <div class="flex gap-2">
-          <img src="search.svg" alt="" />
+          <img src="search.svg" alt="" aria-hidden="true" />
+          <label for="text" class="sr-only">Filtrar por título</label>
           <input
             type="text"
-            name="text"
             id="text"
             placeholder="Pesquisar"
             class="outline-0 w-full text-gray-400"
@@ -26,8 +26,14 @@
 
       <div class="flex flex-col gap-2 border-b border-gray-400 pb-3 mb-10 mt-8">
         <div class="flex gap-2">
-          <img src="sale-tag.svg" alt="" />
-          <select class="w-full bg-white text-gray-400 py-2 focus:outline-none" formControlName="status">
+          <img src="sale-tag.svg" alt="" aria-hidden="true" />
+          <label for="status" class="sr-only">Filtrar por status</label>
+          <select
+            title="Filtrar por status"
+            class="w-full bg-white text-gray-400 py-2 focus:outline-none"
+            formControlName="status"
+            id="status"
+          >
             <option value="" disabled selected hidden>Status</option>
             <option value="anunciado">Anunciado</option>
             <option value="vendido">Vendido</option>
@@ -38,12 +44,13 @@
 
       <button
         class="bg-[#F24D0D] w-full text-white px-5 py-4 rounded-[10px] cursor-pointer font-medium text-base"
-        (click)="filterProducts()"
+        type="submit"
       >
         Aplicar filtro
       </button>
 
       <button
+        type="button"
         (click)="clearFilter()"
         class="bg-[#0095E5] w-full text-white px-5 py-4 rounded-[10px] cursor-pointer font-medium text-base mt-5"
       >
@@ -52,11 +59,16 @@
     </form>
   </div>
 
-  <div class="col-span-2 grid grid-cols-2 gap-4">
+  <section class="col-span-2 grid grid-cols-2 gap-4" aria-labelledby="products-list-section">
+    <label id="products-list-section" class="sr-only">Lista de produtos</label>
     @for (product of products; track product.id) {
     <div class="bg-white rounded-2xl p-1 flex flex-col cursor-pointer">
       <div class="h-48 relative">
-        <img class="rounded-2xl w-full h-48 object-cover" [src]="product.imageBase64" />
+        <img
+          class="rounded-2xl w-full h-48 object-cover"
+          [src]="product.imageBase64"
+          [alt]="'Imagem do produto:' + product.title"
+        />
         <div class="flex justify-center gap-1 absolute top-4 right-4">
           <span
             class="bg-[#0095E5] p-2 rounded-2xl text-xs text-white capitalize"
@@ -83,5 +95,5 @@
     } @empty {
     <p class="font-bold text-gray-500">Nenhum item encontrado</p>
     }
-  </div>
-</div>
+  </section>
+</main>
