@@ -1,4 +1,4 @@
-# DesafioRocketseat
+# Desafio Angular Rocketseat
 
 This application is a marketplace management panel built with Angular, inspired by the [Figma template](https://www.figma.com/community/file/1552330963598305030/gestao-de-marketplace-desafio-de-angular) from Rocketseat's Angular challenge.
 
